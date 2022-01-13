@@ -1,7 +1,6 @@
 import Header from "./pages/Header.js";
 import Navigation from "./pages/Navigation.js";
 import Home from "./pages/Home.js";
-import ButtonReaction from "./pages/popMenu.js";
 import Post from "./pages/Posts.js";
 import Register from "./pages/Register.js";
 import Login from "./pages/Login.js";
@@ -24,9 +23,9 @@ if (currentPage !== "/") {
   // url이 루트가 아닌 경우(새로고침 된 경우 현재 경로에 맞는 화면 유지)
   init();
   switch (currentPage) {
-    case "/menu":
-      ButtonReaction();
-      break;
+    // case "/menu":
+    //   ButtonReaction();
+    //   break;
     case "/home":
       Home(root);
       break;
@@ -66,7 +65,10 @@ window.addEventListener("popstate", () => {
       Home(root);
       break;
     case "/login":
-      Login(root);
+      if (Login(root)) {
+        console.log("true");
+        Home(root);
+      }
       break;
     case "/free-board":
     case "/secret-board":

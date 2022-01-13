@@ -1,16 +1,18 @@
+import createButton from "./Button.js";
+
 const $ = document;
 
 export default function Login(root) {
   const login = $.createElement("div");
-  // history.pushState({ data: `${purpose}` }, null, `${purpose}`);
+
   login.innerHTML = `
   <div class="login-box">
   <h1> Login Page </h1>
-  ID: <input type="text" name="id" pattern="^([a-z0-9_]){6,50}$">
-  Password: <input type="password" name="passwd">
+  ID: <input id="id" type="text" name="id" pattern="^([a-z0-9_]){6,50}$">
+  Password: <input id="password" type="password" name="passwd">
   <div class="login-btn-box">
-  <input type="submit" class="login-btn click" value="회원가입">
-  <input type="submit" class="login-btn click" value="로그인">
+  <input type="button" class="sign-up click" value="회원가입" >
+  <input type="button" class="login-btn click" value="로그인">
   </div>
 </div>
       `;
@@ -30,4 +32,7 @@ export default function Login(root) {
   }
   login.classList.add("login-box", "replace");
   root.appendChild(login);
+
+  createButton("login-btn");
+  createButton("sign-up");
 }
