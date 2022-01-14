@@ -4,6 +4,7 @@ import Home from "./pages/Home.js";
 import Post from "./pages/Posts.js";
 import Register from "./pages/Register.js";
 import Login from "./pages/Login.js";
+import write from "./pages/Write.js";
 
 const $ = document;
 
@@ -45,6 +46,9 @@ if (currentPage !== "/") {
     case "/register":
       Register(root);
       break;
+    case "/write":
+      write(root);
+      break;
   }
 } else {
   // url이 루트라면
@@ -79,6 +83,9 @@ window.addEventListener("popstate", () => {
       break;
     case "/register":
       Register(root);
+      break;
+    case "/write":
+      write(root);
       break;
   }
 });

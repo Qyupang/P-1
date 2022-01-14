@@ -7,6 +7,7 @@ import Navigation from "./Navigation.js";
 import handleMenuClick from "./menuSelect.js";
 import signUp from "./signUp.js";
 import pageLogin from "./pageLogin.js";
+import write from "./Write.js";
 
 const $ = document;
 
@@ -50,5 +51,7 @@ function moveToRoute(root, purpose) {
     case "sign-up":
       signUp(root);
       break;
+    case "write":
+      write(root);
   }
 }

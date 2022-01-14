@@ -1,4 +1,5 @@
 import Home from "./Home.js";
+import Navigation from "./Navigation.js";
 
 const $ = document;
 
@@ -15,5 +16,7 @@ export default function pageLogin() {
   icon.innerHTML = `<i class="fas fa-user"></i>`;
 
   // 로그인하면 홈화면 출력
+  Navigation(root);
   Home(root);
+  history.pushState(null, null, "home");
 }
